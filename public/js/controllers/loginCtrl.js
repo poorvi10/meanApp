@@ -1,6 +1,6 @@
 // public/js/controllers/NerdCtrl.js
 var app = angular.module('loginCtrl', []);
-app.controller('loginController', function($scope) {
+app.controller('loginController', function($scope, $cookies, $location) {
         
         $scope.facebook = {
             username: "",
@@ -14,6 +14,10 @@ app.controller('loginController', function($scope) {
                 if(response.authResponse) {
                     FB.api('/me', 'GET', {fields: 'email, first_name, name, id, picture'}, function(response){
                         $scope.$apply(function() {
+                            $cookies.put('username', response.name);
+                            $cookies.put('email', response.email);
+                            $cookies.put('image', response.picture.data.url);
+                            $location.path('/dashboard');
                             $scope.facebook.username = response.name;
                             $scope.facebook.email = response.email;
                             $scope.facebook.fb_image = response.picture.data.url;

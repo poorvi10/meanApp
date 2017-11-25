@@ -1,5 +1,11 @@
 // public/js/app.js
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'loginCtrl', 'signupCtrl', 'userService']);
+angular.module('sampleApp', ['ngRoute', 
+                             'appRoutes', 
+                             'loginCtrl', 
+                             'signupCtrl', 
+                             'dashboardCtrl', 
+                             'userService',
+                             'ngCookies']);
 
 window.fbAsyncInit = function() {
     FB.init({

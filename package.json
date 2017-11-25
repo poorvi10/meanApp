@@ -2,6 +2,7 @@
   "name": "starter-node-angular",
   "main": "server.js",
   "dependencies": {
+    "angular-cookies": "^1.6.7",
     "angularjs-social-login": "^2.6.1",
     "body-parser": "~1.4.2",
     "express": "~4.5.1",

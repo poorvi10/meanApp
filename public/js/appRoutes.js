@@ -13,6 +13,17 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'loginController'
+            })
+
+            // nerds page that will use the NerdController
+            .when('/404', {
+                templateUrl: 'views/404.html'
+            })
+            
+            // nerds page that will use the NerdController
+            .when('/dashboard', {
+                templateUrl: 'views/dashboard.html',
+                controller: 'dashboardController'
             });
     
         $locationProvider.html5Mode(true);
