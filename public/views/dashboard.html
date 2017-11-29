@@ -2,7 +2,34 @@
     <img src="{{image}}">
 </div>
 <h3 style=" width:50%">Hello {{username}}</h3>
+<h1 class="text-center">
+    <span />{{userData.name}}</span>
+    <br>
+    <a href="{{userData.html_url}}" class="btn btn-default">
+        <span class="octicon octicon-octoface"></span>
+        {{userData.login}}
+    </a>
+</h1>
 
+<select ng-model="selectedRepo">
+    <option ng-repeat="x in tempArr" value="{{x.url}}">{{x.name}}</option>
+</select>
+<a href="{{selectedRepo}}">{{selectedRepo}}</a>
+<h1>Create git issue</h1>
+<form name="form" ng-submit="getIssues()" role="form">
+    <div class="form-group">
+        <label for="subject">Enter Subject</label>
+        <input type="text" name="subject" class="form-control" placeholder="Type Subject" ng-model="git.subject" required>
+        <span ng-show="form.subject.$dirty && form.subject.$error.required">This is required</span>
+    </div>
+    <div class="form-group">
+        <label for="description">Enter Description</label>
+        <input type="textarea" name="description" class="form-control" placeholder="Type Description" ng-model="git.description" required>
+        <span ng-show="form.description.$dirty && form.description.$error.required">This is required</span>
+    </div>
+    <div class="form-actions">
+        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Create</button>
+    </div>
+</form>
 
 <input type="button" value="logout" ng-click="logout()">
-

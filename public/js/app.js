@@ -5,7 +5,8 @@ angular.module('sampleApp', ['ngRoute',
                              'signupCtrl', 
                              'dashboardCtrl', 
                              'userService',
-                             'ngCookies']);
+                             'ngCookies'
+                            ]);
 
 window.fbAsyncInit = function() {
     FB.init({

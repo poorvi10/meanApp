@@ -22,6 +22,16 @@ angular.module('userService', []).factory('userService', ['$http', function($htt
             // call to DELETE a nerd
             delete : function(id) {
                 return $http.delete('/api/nerds/' + id);
+            },
+
+            createIssue: function(data) {
+                return $http.post('/createIssue', data).
+                 then(function(data) {
+                    console.log(data);
+                 })
+                 .catch(function(data) {
+                    console.log(data);
+                 });
             }
         }       
     

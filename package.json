@@ -6,7 +6,11 @@
     "angularjs-social-login": "^2.6.1",
     "body-parser": "~1.4.2",
     "express": "~4.5.1",
+    "github-create-issue": "^2.0.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
     "method-override": "~2.0.2",
-    "mongoose": "^3.8.40"
+    "mongoose": "^4.2.8",
+    "request": "^2.83.0"
   }
 }
